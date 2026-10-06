@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 580" width="100%" height="100%">
+  <rect width="940" height="580" fill="rgb(15, 23, 42)" rx="8"/>
+  <rect width="940" height="38" fill="rgb(30, 41, 59)" rx="8"/>
+  <circle cx="20" cy="19" r="6" fill="rgb(239, 68, 68)"/>
+  <circle cx="38" cy="19" r="6" fill="rgb(245, 158, 11)"/>
+  <circle cx="56" cy="19" r="6" fill="rgb(34, 197, 94)"/>
+  <text x="310" y="24" fill="rgb(148, 163, 184)" font-family="Segoe UI, -apple-system, sans-serif" font-size="12">Terminal: Interactive Rebase Execution &amp; Results</text>
+
+  <g font-family="Courier New, Consolas, monospace" font-size="13">
+    <!-- Step 1: Log before rebase -->
+    <text x="24" y="66" fill="rgb(34, 197, 94)">devops@workstation</text>
+    <text x="180" y="66" fill="rgb(248, 250, 252)">:~/repo$ </text>
+    <text x="260" y="66" fill="rgb(56, 189, 248)">git log --oneline -4</text>
+    <text x="24" y="90" fill="#ef4444">d4e5f6a</text>
+    <text x="95" y="90" fill="rgb(248, 250, 252)"> (HEAD -&gt; feature/auth) add temp file for debug</text>
+    <text x="24" y="112" fill="#f59e0b">c3d4e5f</text>
+    <text x="95" y="112" fill="rgb(203, 213, 225)"> adds utility functions</text>
+    <text x="24" y="134" fill="#f59e0b">b2c3d4e</text>
+    <text x="95" y="134" fill="rgb(203, 213, 225)"> fix typo</text>
+    <text x="24" y="156" fill="#f59e0b">a1b2c3d</text>
+    <text x="95" y="156" fill="rgb(203, 213, 225)"> feat: khoi tao module auth</text>
+
+    <!-- Step 2: Run rebase -i -->
+    <text x="24" y="196" fill="rgb(34, 197, 94)">devops@workstation</text>
+    <text x="180" y="196" fill="rgb(248, 250, 252)">:~/repo$ </text>
+    <text x="260" y="196" fill="rgb(56, 189, 248)">git rebase -i HEAD~4</text>
+    <text x="24" y="222" fill="rgb(203, 213, 225)">[detached HEAD 7e9f012] feat: hoan thien module authentication</text>
+    <text x="24" y="244" fill="rgb(34, 197, 94)" font-weight="bold">Successfully rebased and updated refs/heads/feature/auth.</text>
+
+    <!-- Step 3: Log after rebase -->
+    <text x="24" y="284" fill="rgb(34, 197, 94)">devops@workstation</text>
+    <text x="180" y="284" fill="rgb(248, 250, 252)">:~/repo$ </text>
+    <text x="260" y="284" fill="rgb(56, 189, 248)">git log --oneline -2</text>
+    <text x="24" y="310" fill="rgb(34, 197, 94)" font-weight="bold">7e9f012</text>
+    <text x="95" y="310" fill="rgb(248, 250, 252)" font-weight="bold"> (HEAD -&gt; feature/auth) feat: hoan thien module authentication</text>
+    <text x="24" y="332" fill="rgb(148, 163, 184)">f1a2b3c</text>
+    <text x="95" y="332" fill="rgb(148, 163, 184)"> (main) Initial project setup</text>
+
+    <!-- Step 4: Verify temp.txt deleted -->
+    <text x="24" y="372" fill="rgb(34, 197, 94)">devops@workstation</text>
+    <text x="180" y="372" fill="rgb(248, 250, 252)">:~/repo$ </text>
+    <text x="260" y="372" fill="rgb(56, 189, 248)">ls temp.txt</text>
+    <text x="24" y="396" fill="#ef4444">ls: cannot access 'temp.txt': No such file or directory</text>
+
+    <!-- Step 5: Verify auth.js content -->
+    <text x="24" y="434" fill="rgb(34, 197, 94)">devops@workstation</text>
+    <text x="180" y="434" fill="rgb(248, 250, 252)">:~/repo$ </text>
+    <text x="260" y="434" fill="rgb(56, 189, 248)">ls -l auth.js</text>
+    <text x="24" y="458" fill="rgb(203, 213, 225)">-rw-r--r-- 1 devops devops 412 Oct  6 11:28 auth.js</text>
+
+    <!-- Step 6: Status clean -->
+    <text x="24" y="498" fill="rgb(34, 197, 94)">devops@workstation</text>
+    <text x="180" y="498" fill="rgb(248, 250, 252)">:~/repo$ </text>
+    <text x="260" y="498" fill="rgb(56, 189, 248)">git status</text>
+    <text x="24" y="522" fill="rgb(34, 197, 94)">nothing to commit, working tree clean</text>
+  </g>
+</svg>
